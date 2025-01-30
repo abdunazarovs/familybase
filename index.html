@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>family base</title>
+<title>Family Database</title>
+<style>
+  /* Basic CSS Styling */
+  table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+</style>
 </head>
 <body>
-    
-</body>
+
+<h1>Family Database</h1>
+
+<form id="familyForm">
+  Name: <input type="text" id="name"><br>
+  Age: <input type="number" id="age"><br>
+  Relationship: <input type="text" id="relationship"><br>
+  <button type="button" onclick="addMember()">Add Member</button>
+  <input type="hidden" id="editIndex">  </form>
+
+<table id="familyTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Relationship</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script src="script.js"></script> </body>
 </html>
