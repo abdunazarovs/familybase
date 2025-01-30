@@ -9,7 +9,7 @@ function addMember() {
 
   if (editIndex !== "") {
     familyData[editIndex] = { name, age, relationship };
-    document.getElementById('editIndex').value = ""; // Clear edit index
+    document.getElementById('editIndex').value = "";
   } else {
     familyData.push({ name, age, relationship });
   }
@@ -24,7 +24,7 @@ function editMember(index) {
   document.getElementById('name').value = member.name;
   document.getElementById('age').value = member.age;
   document.getElementById('relationship').value = member.relationship;
-  document.getElementById('editIndex').value = index;  // Store index for editing
+  document.getElementById('editIndex').value = index;
 }
 
 function deleteMember(index) {
@@ -35,7 +35,7 @@ function deleteMember(index) {
 
 function renderTable() {
   const tableBody = document.getElementById('familyTable').getElementsByTagName('tbody')[0];
-  tableBody.innerHTML = ''; // Clear existing rows
+  tableBody.innerHTML = '';
 
   familyData.forEach((member, index) => {
     const row = tableBody.insertRow();
@@ -47,7 +47,7 @@ function renderTable() {
     nameCell.textContent = member.name;
     ageCell.textContent = member.age;
     relationshipCell.textContent = member.relationship;
-    actionsCell.innerHTML = `<button onclick="editMember(${index})">Edit</button> <button onclick="deleteMember(${index})">Delete</button>`;
+    actionsCell.innerHTML = `<button class="edit-btn" onclick="editMember(${index})">Edit</button> <button class="delete-btn" onclick="deleteMember(${index})">Delete</button>`; // Corrected line
   });
 }
 
